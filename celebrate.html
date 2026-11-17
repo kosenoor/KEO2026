@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>KNRians Get Together 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Happy UAE National Day! Tap the KEO seal to open your invitation to the KNRians Get Together – Wed, 2nd Dec 2026 · 10 AM – 6 PM · Zabeel Park, Dubai.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kosenoor.github.io/knrians-2026/celebrate.html">
+<meta property="og:title" content="Happy UAE National Day – KNRians Get Together 2026">
+<meta property="og:description" content="Tap the KEO seal to open your invitation. Wed, 2nd Dec 2026 · 10 AM – 6 PM · Zabeel Park, Dubai.">
+<meta property="og:image" content="https://kosenoor.github.io/knrians-2026/preview.jpg?v=3">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#00451c">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Noto+Serif+Tamil:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--ruby:#b3122b; --ruby-d:#7a0a1a; --ink:#1f1f1f; --gold:#b39563; --green:#00732f; --paper:#ffffff}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;height:100%;overflow:hidden;background:radial-gradient(circle at 50% 30%,#0b3b20,#03140a 70%,#000)}
+  #wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #stage{flex:0 0 auto;transform-origin:center center}
+  #sealBtn{position:absolute;left:270px;top:530px;width:180px;height:180px;border-radius:50%;border:0;background:transparent;cursor:pointer;z-index:20;-webkit-tap-highlight-color:transparent}
+  #sealBtn:focus-visible{outline:3px solid #ffd76a;outline-offset:4px}
+  #hint{position:absolute;left:0;right:0;top:880px;text-align:center;z-index:19;pointer-events:none;
+    font-family:'Cormorant Garamond',serif;font-weight:700;font-size:44px;color:#fff;letter-spacing:1px;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+  #hint small{display:block;font-family:'Noto Serif Tamil',serif;font-size:28px;font-weight:600;margin-top:6px;color:#ffe9a8}
+  #night{position:absolute;inset:0;opacity:0;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% 35%,#0d3a24 0%,#04160c 55%,#000 100%)}
+  #fx{position:absolute;left:0;top:0;width:720px;height:1280px;pointer-events:none}
+  #petalSvg,#flagbg,#pillars,#frame,#fountain,#night,svg.full{pointer-events:none}
+  .scene a,.scene button{position:relative;z-index:30}
+  #sE{z-index:25}
+  #sH{top:300px}
+  #sH::before{content:"";position:absolute;left:-40px;right:-40px;top:-90px;bottom:-110px;z-index:-1;
+    background:radial-gradient(closest-side,rgba(0,0,0,.72),rgba(0,0,0,.45) 60%,transparent);border-radius:50%}
+  #sH .hp{font-family:'Great Vibes',cursive;font-size:104px;line-height:1.05;color:#ffd76a;
+    text-shadow:0 0 6px #000,0 0 18px rgba(255,190,60,.6),0 3px 0 rgba(0,0,0,.5)}
+  #sH .nd{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:40px;letter-spacing:6px;color:#fff;text-transform:uppercase;margin-top:6px;text-shadow:0 0 8px #000,0 0 14px #000}
+  #sH .kg{font-family:'Great Vibes',cursive;font-size:96px;line-height:1.1;color:#fff;text-shadow:0 0 6px #000,0 0 18px rgba(0,0,0,.9),0 0 30px rgba(255,215,106,.35)}
+  #sH .mf{display:inline-block;width:96px;height:54px;border-radius:5px;margin:26px 0 18px;box-shadow:0 0 0 2px #fff,0 6px 20px rgba(0,0,0,.5);
+    background:linear-gradient(90deg,#ef3340 0 26%,transparent 26%),linear-gradient(180deg,#00843d 0 33.4%,#fff 33.4% 66.6%,#111 66.6%)}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-family:'Cormorant Garamond',serif;font-weight:700;
+    font-size:34px;padding:14px 34px;border-radius:999px;cursor:pointer;border:0}
+  .btn.reg{background:linear-gradient(180deg,#00a04a,#00732f);color:#fff;box-shadow:0 0 0 3px #fff,0 0 0 6px #c8102e,0 10px 24px rgba(0,0,0,.3)}
+  .btn.again{background:#fff;color:#1b1b1b;font-size:24px;padding:8px 22px;box-shadow:0 0 0 2px #1b1b1b}
+  #endBtns{opacity:0;pointer-events:none;margin-top:18px}
+  #endBtns.on{pointer-events:auto}
+  #endBtns a.url{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;color:#00732f;margin-top:14px}
+  #stage{position:relative;width:720px;height:1280px;overflow:hidden;
+    background:radial-gradient(120% 90% at 50% 50%,#ffffff 0%,#fbfbf9 60%,#efefea 100%)}
+  .layer{position:absolute;inset:0}
+  svg.full{position:absolute;left:0;top:0;width:720px;height:1280px;overflow:visible}
+  .scene{position:absolute;left:0;right:0;text-align:center;opacity:0}
+  .rv span.g{opacity:0}
+  .fd{opacity:0}
+  .ar{font-family:'Amiri',serif;color:var(--ruby);font-size:58px;line-height:1.3;direction:rtl}
+  .serif{font-family:'Cormorant Garamond',serif;color:var(--ink)}
+  .script{font-family:'Great Vibes',cursive;color:var(--ruby)}
+  .ta{font-family:'Noto Serif Tamil',serif;color:var(--ink)}
+  .ruby{color:var(--ruby)}
+  .lbl{font-family:'Cormorant Garamond',serif;color:var(--green);font-size:26px;letter-spacing:3px;text-transform:uppercase;font-weight:600}
+  .orn{display:block;margin:0 auto}
+  #qrbox{display:inline-block;padding:14px;background:#fff;border:3px solid #00732f;border-radius:14px;box-shadow:0 6px 18px rgba(94,13,24,.18)}
+  #qrbox img{display:block;width:190px;height:190px;image-rendering:pixelated}
+  .logo{width:130px;height:130px;border-radius:50%;background:#fff;box-shadow:0 0 0 3px #00732f,0 0 0 6px #fff,0 0 0 8px #c8102e,0 6px 16px rgba(0,0,0,.18);display:inline-grid;place-items:center}
+  .logo img{width:116px;height:116px;border-radius:50%}
+</style>
+</head>
+<body>
+<div id="wrap">
+<div id="stage">
+  <!-- UAE flag background -->
+  <svg class="full" id="flagbg">
+    <defs>
+      <linearGradient id="gTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00a04a"/><stop offset="1" stop-color="#005a26"/></linearGradient>
+      <linearGradient id="kBot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2b2b"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient>
+      <linearGradient id="rSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c8102e"/><stop offset="1" stop-color="#ef3340"/></linearGradient>
+    </defs>
+    <path d="M0 0 H720 V96 C560 150 380 70 200 120 C120 142 60 140 0 128Z" fill="url(#gTop)"/>
+    <path d="M0 128 C60 140 120 142 200 120 C380 70 560 150 720 96" fill="none" stroke="#c9ad7a" stroke-width="2.5"/>
+    <path d="M0 1280 H720 V1150 C560 1110 380 1190 200 1150 C120 1132 60 1140 0 1160Z" fill="url(#kBot)"/>
+    <path d="M0 1160 C60 1140 120 1132 200 1150 C380 1190 560 1110 720 1150" fill="none" stroke="#c9ad7a" stroke-width="2.5"/>
+    <rect x="0" y="0" width="24" height="1280" fill="url(#rSide)"/>
+    <rect x="24" y="0" width="2" height="1280" fill="#c9ad7a"/>
+  </svg>
+  <!-- paper grain -->
+  <svg class="full" style="opacity:.05">
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="4"/><feColorMatrix values="0 0 0 0 .35  0 0 0 0 .25  0 0 0 0 .15  0 0 0 1.4 -.35"/></filter>
+    <rect width="720" height="1280" filter="url(#grain)"/>
+  </svg>
+
+  <!-- shared defs -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <radialGradient id="rg" cx=".45" cy=".4" r=".65">
+        <stop offset="0" stop-color="#c63046"/><stop offset=".55" stop-color="#8a1124"/><stop offset="1" stop-color="#4c0612"/>
+      </radialGradient>
+      <radialGradient id="rg2" cx=".5" cy=".45" r=".6">
+        <stop offset="0" stop-color="#d84358"/><stop offset="1" stop-color="#7a0d1f"/>
+      </radialGradient>
+      <linearGradient id="stone" x1="0" x2="1">
+        <stop offset="0" stop-color="#cfcfc8"/><stop offset=".35" stop-color="#ffffff"/><stop offset=".7" stop-color="#eeeeea"/><stop offset="1" stop-color="#c2c2ba"/>
+      </linearGradient>
+      <linearGradient id="silk" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#e9dccb"/><stop offset=".45" stop-color="#f8f0e5"/><stop offset=".55" stop-color="#efe3d3"/><stop offset="1" stop-color="#d8c7b1"/>
+      </linearGradient>
+      <radialGradient id="wax" cx=".4" cy=".35" r=".7">
+        <stop offset="0" stop-color="#b8283c"/><stop offset=".6" stop-color="#7d0f20"/><stop offset="1" stop-color="#4a0510"/>
+      </radialGradient>
+      <symbol id="rose" viewBox="-50 -50 100 100" overflow="visible">
+        <g fill="url(#rg)" stroke="#3f0510" stroke-width="1.2">
+          <path d="M0 0 C-34 -6 -42 -40 0 -46 C42 -40 34 -6 0 0Z"/>
+          <path d="M0 0 C-34 -6 -42 -40 0 -46 C42 -40 34 -6 0 0Z" transform="rotate(72)"/>
+          <path d="M0 0 C-34 -6 -42 -40 0 -46 C42 -40 34 -6 0 0Z" transform="rotate(144)"/>
+          <path d="M0 0 C-34 -6 -42 -40 0 -46 C42 -40 34 -6 0 0Z" transform="rotate(216)"/>
+          <path d="M0 0 C-34 -6 -42 -40 0 -46 C42 -40 34 -6 0 0Z" transform="rotate(288)"/>
+        </g>
+        <g fill="url(#rg2)" stroke="#3f0510" stroke-width="1">
+          <path d="M0 0 C-22 -4 -27 -27 0 -30 C27 -27 22 -4 0 0Z" transform="rotate(36)"/>
+          <path d="M0 0 C-22 -4 -27 -27 0 -30 C27 -27 22 -4 0 0Z" transform="rotate(156)"/>
+          <path d="M0 0 C-22 -4 -27 -27 0 -30 C27 -27 22 -4 0 0Z" transform="rotate(276)"/>
+        </g>
+        <circle r="13" fill="#7a0d1f"/>
+        <path d="M0 -7 C9 -7 9 7 0 7 C-11 7 -11 -11 2 -13 C17 -13 17 13 0 15" fill="none" stroke="#3a040e" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M-26 -18 C-18 -30 -4 -34 8 -32" fill="none" stroke="#e46b7c" stroke-width="1.5" opacity=".55"/>
+      </symbol>
+      <symbol id="leaf" viewBox="0 -10 40 20" overflow="visible">
+        <path d="M0 0 C10 -9 27 -9 38 0 C27 9 10 9 0 0Z" fill="#62703f" stroke="#3f4a26" stroke-width=".8"/>
+        <path d="M2 0 H34" stroke="#3f4a26" stroke-width=".8"/>
+      </symbol>
+      <symbol id="bud" viewBox="-10 -14 20 24" overflow="visible">
+        <path d="M0 -12 C8 -6 8 6 0 8 C-8 6 -8 -6 0 -12Z" fill="#8a1124" stroke="#3f0510" stroke-width=".8"/>
+        <path d="M-6 4 L0 10 L6 4" fill="#62703f"/>
+      </symbol>
+      <symbol id="dove" viewBox="-60 -50 120 80" overflow="visible">
+        <path d="M-46 4 C-30 -6 -8 -8 10 -2 C22 -12 34 -14 42 -8 C46 -6 50 -4 54 -2 L44 0 C40 10 26 18 8 18 C-12 18 -30 12 -46 4Z" fill="#fffdf8" stroke="#b9ad9c" stroke-width="1.4"/>
+        <path d="M-46 4 L-58 -2 L-56 8 L-60 14 L-44 10Z" fill="#f5f0e7" stroke="#b9ad9c" stroke-width="1.2"/>
+        <circle cx="40" cy="-6" r="1.8" fill="#3a3a3a"/>
+        <g class="wing"><path d="M-6 -2 C-20 -30 0 -48 26 -46 C14 -36 12 -20 12 -4Z" fill="#fbf8f2" stroke="#b9ad9c" stroke-width="1.3"/>
+          <path d="M2 -10 C0 -24 8 -34 20 -40 M8 -8 C8 -20 14 -30 22 -34" stroke="#cfc4b4" stroke-width="1" fill="none"/></g>
+      </symbol>
+      <pattern id="envpat" width="150" height="150" patternUnits="userSpaceOnUse">
+        <rect width="150" height="150" fill="#00732f"/>
+        <path d="M0 75 C30 40 50 110 75 75 S120 40 150 75" fill="none" stroke="#f3efe2" stroke-width="1.6" opacity=".85"/>
+        <use href="#leaf" x="18" y="58" width="22" height="11" transform="rotate(-30 18 58)"/>
+        <use href="#leaf" x="92" y="84" width="22" height="11" transform="rotate(20 92 84)"/>
+        <use href="#leaf" x="120" y="62" width="20" height="10" transform="rotate(-50 120 62)"/>
+        <use href="#rose" x="50" y="62" width="34" height="34"/>
+        <use href="#rose" x="120" y="74" width="26" height="26"/>
+        <use href="#bud" x="30" y="85" width="10" height="12"/>
+        <use href="#rose" x="6" y="6" width="24" height="24"/>
+        <use href="#leaf" x="22" y="20" width="16" height="8" transform="rotate(30 22 20)"/>
+        <use href="#rose" x="80" y="118" width="24" height="24"/>
+        <use href="#leaf" x="97" y="134" width="16" height="8" transform="rotate(-20 97 134)"/>
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- ===== PILLARS + DOVES (scenes A,B) ===== -->
+  <div id="pillars" class="layer"><svg class="full" id="pillarSvg"></svg></div>
+
+  <!-- ===== ORNATE FRAME (scenes C,D,E) ===== -->
+  <div id="frame" class="layer" style="opacity:0"><svg class="full" id="frameSvg"></svg></div>
+  <div id="fountain" class="layer" style="opacity:0"><svg class="full" id="fountainSvg"></svg></div>
+
+  <!-- ===== TEXT SCENES ===== -->
+  <div class="scene" id="sA" data-in="12.8" data-out="24.11" style="top:520px">
+    <div class="ar fd" id="bism">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+    <svg class="orn" width="220" height="24" viewBox="0 0 220 24"><path d="M10 12 H90 M130 12 H210" stroke="#00732f" stroke-width="1.8"/><path d="M110 3 L118 12 L110 21 L102 12Z" fill="#c8102e"/></svg>
+    <div class="serif rv" data-s="16.86" data-d="3.77" style="font-size:30px;line-height:1.45;margin-top:10px">In the name of Allah,<br>the Most Gracious, the Most Merciful</div>
+  </div>
+
+  <div class="scene" id="sB" data-in="24.69" data-out="36.58" style="top:380px;padding:0 105px">
+    <div class="ta rv" data-s="25.42" data-d="2.61" style="font-size:32px;color:var(--green);font-weight:600">அஸ்ஸலாமு அலைக்கும் (வரஹ்...)</div>
+    <div class="ta rv ruby" data-s="27.88" data-d="2.61" style="font-size:40px;font-weight:700;margin:22px 0 6px;line-height:1.5">KEO ஒன்று கூடல் நிகழ்ச்சி</div>
+    <svg class="orn" width="220" height="24" viewBox="0 0 220 24"><path d="M10 12 H90 M130 12 H210" stroke="#00732f" stroke-width="1.8"/><path d="M110 3 L118 12 L110 21 L102 12Z" fill="#c8102e"/></svg>
+    <div class="ta rv" data-s="30.49" data-d="4.35" style="font-size:30px;line-height:1.85;margin-top:16px;font-weight:500">கூத்தாநல்லூர் ஜமாத்தார்கள் அனைவரும் தங்கள் குடும்பத்தினருடன் கலந்து சிறப்பிக்க வேண்டுமாய் அன்புடன் அழைக்கின்றோம்.</div>
+  </div>
+
+  <div class="scene" id="sC" data-in="37.45" data-out="51.37" style="top:130px">
+    <div class="serif rv" data-s="38.17" data-d="2.03" style="font-size:32px;font-style:italic">You're warmly invited to the</div>
+    <div class="script rv" data-s="39.92" data-d="2.17" style="font-size:120px;line-height:1.2">KNRians</div>
+    <div class="script rv" data-s="41.8" data-d="2.03" style="font-size:78px;line-height:1">Get Together 2026</div>
+    <svg class="orn" width="260" height="30" viewBox="0 0 260 30" style="margin:18px auto 14px"><path d="M10 15 H105 M155 15 H250" stroke="#00732f" stroke-width="1.8"/><use href="#rose" x="117" y="2" width="26" height="26"/></svg>
+    <div class="serif rv" data-s="43.83" data-d="2.03" style="font-size:42px;font-weight:700;color:var(--ruby)">Wednesday | 2nd Dec | 2026</div>
+    <div class="lbl rv" data-s="45.57" data-d="0.87" style="margin-top:34px">Time</div>
+    <div class="serif rv" data-s="46.15" data-d="1.45" style="font-size:40px;font-weight:600">10:00 AM – 6:00 PM</div>
+    <div class="lbl rv" data-s="47.45" data-d="0.87" style="margin-top:30px">Venue</div>
+    <div class="serif rv" data-s="48.03" data-d="1.45" style="font-size:40px;font-weight:600">Zabeel Park, Dubai</div>
+    <div class="serif rv" data-s="49.2" data-d="1.45" style="font-size:30px;font-style:italic;margin-top:30px;color:var(--ruby)">Lunch &amp; evening tea will be served</div>
+  </div>
+
+  <div class="scene" id="sD" data-in="51.95" data-out="64.13" style="top:150px;padding:0 80px">
+    <div class="ta rv ruby" data-s="52.53" data-d="2.03" style="font-size:42px;font-weight:700;line-height:1.5">அன்புடன் அழைக்கின்றோம்</div>
+    <svg class="orn" width="220" height="24" viewBox="0 0 220 24" style="margin:10px auto 18px"><path d="M10 12 H90 M130 12 H210" stroke="#00732f" stroke-width="1.8"/><path d="M110 3 L118 12 L110 21 L102 12Z" fill="#c8102e"/></svg>
+    <div class="ta rv" data-s="54.27" data-d="2.03" style="font-size:29px;line-height:1.7;font-weight:600"><span class="ruby">நாள்:</span> டிசம்பர் 2ஆம் தேதி, 2026 (புதன்கிழமை)</div>
+    <div class="ta rv" data-s="55.86" data-d="1.45" style="font-size:29px;line-height:1.7;font-weight:600;margin-top:8px"><span class="ruby">இடம்:</span> ஜெபில் பார்க், துபாய்</div>
+    <div class="ta rv" data-s="57.03" data-d="2.03" style="font-size:29px;line-height:1.7;font-weight:600;margin-top:8px"><span class="ruby">நேரம்:</span> காலை 10 மணி முதல் மாலை 6 மணி வரையில்</div>
+    <div class="ta rv" data-s="58.91" data-d="2.03" style="font-size:27px;line-height:1.75;margin-top:28px">மதிய உணவு, மாலை தேநீர் சிற்றுண்டி ஏற்பாடு செய்யப்பட்டுள்ளது.</div>
+    <div class="ta rv" data-s="60.65" data-d="2.32" style="font-size:27px;line-height:1.75;margin-top:14px">இந்நிகழ்வில் கலந்து கொள்ள கட்டணம் இல்லை. வருகிறவர்கள் பார்க் நுழைவு கட்டணம் மட்டும் செலுத்தி வரவும்.</div>
+  </div>
+
+  <div class="scene" id="sE" data-in="64.71" data-out="999" style="top:60px;padding:0 70px">
+    <div class="logo rv0"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAlgCWAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCACUAJYDASIAAhEBAxEB/8QAHgABAAEEAwEBAAAAAAAAAAAAAAcCBAYIAQUJAwr/xABEEAABAwQABAMGAwUFBAsAAAABAgMEAAUGEQcSITETUWEIFCIyQXEJFYEjQlKRoRYzY3KDJCdikkNERVNUdaKxs8HR/8QAGwEBAAIDAQEAAAAAAAAAAAAAAAQGAgMFAQf/xAAyEQABBAAEBAMHBQADAAAAAAABAAIDEQQSITFBUWFxBRORIjKBocHR4QYUFbHwI1Lx/9oADAMBAAIRAxEAPwD1TpSlESlKURKUpREqlXymqqpX8hoiwTipxoxHg5ZFXTKrqzb2P3UKO1r9AKh7C/xEOD+Y3tNsbvDsF1xYQ25LaKEKJPTqa0E/ElzG73v2g7ha5rznuNuaSmOyVfCN72rXn/8AlaoJJQQUnRHYir7hfAsO6AGWy4i+3ZUo+IYudxkjflFmhV7Hjx16VS/R7Cnx7jFbkRnUPsOAKS42dhQ8wauk9hWmX4YfE265xwbmW26vuSl2iR4DTzitkoPUDdbmjtVOxmGOEndCTdKy4DEnFwCQijqD3Bpc0pSoa6CUpSiJSlKIlKUoiUpSiJSlKIlKUoiVSr5TXKjobrAslzmfcLq/juJMszLq1oTJz4Ji28HqOfXzuEdmwfUkDW4807IG5nlZNaXGgtavbs9jNrjU0nLLHNi23IIrfI572sNtvoH0Kj2Neflh9jvPL1kKLWXLRHCl8hkOXJoo79xo9a9kbdwmtC3hNyBTuVXTfMZN2PiISf8ADZ/u2x/lT+prIHsQsUhjwXbNb3Wda8NcVBTr7aqTh/1djII/LEYIG1k38lw5fBY3PLopS0HUigdTvV7f10Uc+ynwEgez7wxi2KNITMmO6elSU60tZ7619O9TUk7SDUbu8KodqUqRikyRi0ve/DhqKoi+vZcdW0a9UhJ9aubJxDmWyezZswitWue6oNxbgySYU0/QJUfkWevwK6+RVXOHi37uUvxApzvT8Lr4fBswsQih1A9epPdSBSqEq5hvdVDrU9ZrmlKV6iUpSiJSlKIlKUoiUpSiJXBOqoeeSwhS1kJQkbKidADzrHHOIVicw+Tk0ee3Ls7CHFmSweZKuQlJCfM8w0PM1rdI1nvGl6ATsuj4p5tNtUcWSxp575KYcfLqU83ucdAPO8R9T+6gHuo+QNYFwr4tWq2W7GLe7jM/HrRfWlPW66S32nkynAkrWXVJUSlxQBV8XfR8qzvAMdkKt9wvd6b1e78fFkNq6+7ta01HHohJ6+aio/Wo5xXgJfGrNjFqy++WxzH8ZDy48e3tLSt5SkrSlTriyNBKVq6JA9apOKmmnl81u3AdL49wp7AxrS0rKnPaTwtNuuM1t+c6zEi+/JHuTiDJj+IEF1nnCQ4kFQ6g9q+CvaEiuWi8SG7BLhzrXIZZfh3mSzCCUOoK2nVOKUQEqA7Dat9NVGUXho1f4RsltuFxzyNb7S7YYEmJGbhRYbKynZXJUSl5YCEjaArWuo3WWXT2f8pyeY/cJdwtdlmve5LC4rj77jTkULDTiVjwxzaWrfQg1pjbi5RbGX8PrtyWWWJujivlYOPd+y3MsXft1titYzdbTLkuR35PM8Ho7oS7yFKCCRsBI3pQVvprRv8AhXxGu3GlC4uQ42wcZukBUlp7wHG0tq5+UskrP7Q6IPiIAAIPoaqg8DbzjsWzttW3Hb4m0SXZcQuvy476HHFczh8Qqc5uZXUhXQ1e2Ofi3DW5PzrlgiMHnyNpcuTcZDkZWzzEB9rYQCepCuTrWbYMRGR5wIHy9dkOQimLIbbeZvDG4s2q9SHJuNSFhqBdnlczkVZ3pl8/Udglw/Y9dEyYhXMnYrC595tOR2h6M+mPcLdLbKFjYW24k/0NY/w9yxzG74nELtKVIjucyrNPeVtTqB/1daj3cQOx/eSPMGrBhJnxUx+rTseXT7KI4B2o3UrA73XNcJPeua7q0JSlKIlKUoiUpSiJVJUE96qrrchvUTHLNOuk5zw4sRlTziu/wpBPQedYkhoJK9AvRQR7W3FR6xY//Za0vqanTmFPTXkHSmY3UaB+hWRr7A188ftbVsx3AcCICYlthNXi7oHZbm+Zto+hcKlkf4Y86ivIYUnLb5HuN6HLJv1yY8dK1dGWCsab39AloHfrvzrJoGetOpu+TSl+H+ZvmSnfdLA+FlAH+QDp5qNcl8PnygHcts9G8v6vuVgJ8jXO60Op5qcL9xGh4/b3Jkt7kaTpKUpBUpaidJSlI6qUT0AHc1aWfCrtxD5bhmaVRLUTzRscQvoR9FSlD51f4Y+EfXmPay4TcO5c6THy7KGSJ5TzW22ujYgoP76h/wB6odz+6DofWpfSnlPpSPCMkOZw9ngOfU/b1W8SOaK4qiJDZgx0MR2kMMNp5UNtpCUpH0AA7V9QnQ9a53TYrrAAaBalxy9K+bsZD7Sm3EJcQoaUlQ2CPUV9dim6EA6ItKuN0TIOCPFh2VjjgbsV5a96bthT/s5UnSXUpT+6R8Kumvn9Ot6M/jZtaWWpHiW6atKZMdW/iSpKvhdaV9dKH3HYgdRU3e0rhZyrh3Imx2vEuFmWJ7Gu6kpBDif1Rv8AUCterHBt0eEPzRpcjF5ZDr62P723uKGkzGSOo1scwHcHejrryxAIA4sFtHvN6HiORGt8Kpa5HF7w1xonY9RwPfgtneDHEoZ7jakTOVF8tyhHntp6BStfC4n/AIVjr99j6VIQO60ndk372dOJFpu9xV7/AGKVpk3OMP2U2Ko76/QOJHxAffR0a3QgS2Z0VmTHcS8w8gOIWnspJGwRUyCRrrYDdetdev8A6s25iLcKKuaUpUpepSlKIlKUoi43UVcY31ZJdLRiDJ5mXz+Y3EJPX3dpQKEH0W7y/cJVUpq6JUajTBmP7R3nKslcGxLmKgRSf/DxyW+noXPEV+orl46XIwM/7H5cVujG55LXj2gXFWRm0oa+ByQ+40FA6KQW1IJ/QLrKvZ24bqzeY1k11a3YLevVujKT8Ml5PTxT5pRrQ+hVs/QV2nG3hYeIWb4NZFSfcozsiS4+6B8fhpbBUlP/ABEAgb/+q2Is9piWK2xrfAYRFhxmkssstjSUJSNAAfascO8zvlPAkX1AAoduJWgxBmUnhddyd11eXZ7jfDy3tzsnvtvsEJ1zwm5FykoYQpeieUKUQN6BOvSrdjiniEjEncpaye0uY20NruqZjZjJHNy7Lm+UdenfvWoP4uw/3DY3/wCft/8Awu1oJfuLE24cCMG4VWVxxtM933m5c4LSHV+8upjt8x0CkFSlKPUb5eu0muuzDTyhj4zoXFp090BuYuP9Uo7p2sc5rtwAR1JNUvbnE+KWIZ1GkScdya1XuPHJDrsCY28hBA2QSkkDoQf1rpm/aE4ZO3du1N5/jbtxccSy3ERdGS6twnQSEhWySdDVeffGnhe/7P8A7Ci0251UZ+6TI1tdfRtCnmlKK31+YDi2wNfwBKa1d9m3E8Nu+ZYrNuOZPWzI27s0uPZ/ytbjbpQtKkbfCtJ5tEb109ahQOfJ4fN4g8kNaTlppJIqwSBsCN+SkS3HiWYUVmNXqAAeIHOl7q3vJLVjdoeul1uUW3W5lPO5LlPJbaQnzKidCsHxX2luFebXlNnsXEDHrpdFq5W4se4NqccPkgb+L9N15Z+2VxJyrjXx1tfCqJNLFmsxjW2PF8Qhhcgtp8R9evm1zEDyAOu5qx42ewTkXBvhEjiPFvC5cOKplT7TrIZdSlawlDqOVZI+JSeh6667+lTIGxPbCJpcj5QC0ZSaB0BceFlaXvkHmOjbbWGibr0HFez7zbchlxpYC0LSUqSeoINayYbjKbLcr1jriAtFqmOREpUO7B+Jrf8ApqSP0rHvw4faFu/GHhX+V5JIXNvNnWqKJjp2t9tARoqP1IDiBvudHdTBfLSiBxtfUgAIu9qRIPTu4y54ZP8AyuI/lUCWQwvtw1aS13+70t2TzWDrRCsceskBtlzhzk0VE/HLk2py0Kf2dAbLkfm7hSPmSd75TofLUs4jjcTEMeg2WCp1UOE0GWi+vnXyjts/Wsdy3Dv7S4yuMw77pcWSmTBlgbLD6OqFfbfQj6gkV23D3KxmOMxripkxZQ5mZcZXdh9BKXEH7KB/TVQ8C9nmGMjUbHpy+CkyWW3fdZLSlK7ajpSlKIlKUoi6HOb2Mbw+93U9fc4jrwHqlJI/rVjw7sf9nMHsdsOy5GhtIcJ7qXygqJ+6tmut43kq4cXRgbAlORoyiBvot9tB/oTV/m+YQ8BxS5X+ehxcKA14rqWikLI2B05iAT17b69h11VZ8QeBP7WwH9k/ZSYx7FDiV0vEdH5XfsKvI+FuNd0x3lfQJfbW0N+nMpFSOnoDWrsjisjLbJfHMhmSLTZMmSHsZbcY8V2I2yEgy3VITppvxS2rSiSOuzo1P3DvLRmWLxbgtv3eYNszIx7sSEHlcQfsoH7jR+tZeFYhrnOYDvr9PsspWENBPBaefi5JU5wGxwJSVEX5vsN/9C7Wj2bcK5V69kzB86hR1F6xOrgTVJSebwXn3lNKPolaFD/Vr21yLGbblFvMO5xkyY/MFcpUUkEdtFJBFdRA4Z45bLdOgRralEWaAl9CnVq5wN66kkjWz21XdM2LjfGIQMrHl+pOtty5SK26qF5MLw8vJtwAGm2t3v8ARedl/wAqvvtW/h9LgW5h66ZZjEth6ZEbSVPSEtbStSUjueVYc0PPQ69K1e9n/PGsazLE8cmYFaXZy7o0yq7yozgnN+I6BzAk6Ckg9Omug6d9+2th4aY9jUtUq2wPd3ygtlRfcWCk9wQpRH0H8qtJfB7EJshb7lmbS4o7PhOuNjfnpKgKi1OcFLgnxtLXkkDM4ZbFDUDUAcCFtEcQnbMHnSr9ka/AnTva8u/bd4A5bw34lW3jLikORIstyRGnLfYR4qoEpDadhwAfIrlB5ta6kHXTeDcX/bd4ne01gtu4cIscRmO6poSGbMw449NUggoB2pXKkEJOh9R310r2eVj8B20JtjkVt2AlsNBhY5gEjoB1/wDesOjcAsIjS3JDdmSFLVzKb8VfIo+o31/WpsWImgjjaYWyOjADXEkVWwIA1AO231Wg4eOR7iZC1rjdAA/XRa6/hy8DJ/C3DHpVyTyyn+dTqgdpLrhRzJSeyghLSBsdCoq0a2JzZkDijg7mvidanMEjy5EL6/qgVIEKGzAitx47SGWW08qG20hKUjyAFRVxXyiPjWb2u5yELeYsdluF0ebb+Yj9m2hI9VEkD7VxsW10WFe+Z2ZznZiepNnTkugHNe8NjFNAoDoB/isoY4h2N7KrhjaJKjcLbGRJmKLagywlR+FK3PlSojryk711rqbO4MY4qSYyHB+WZLG97aA+QS2tBej5rbKVf6ZNavY7YpPGritlMXI4k60rmBU02KNcSbbPkx220cjriRzJ5OdsK0D15ta1qpuh4TM4YcIMLbnykyrjjdwjPuOtkqSkOOltxCSevIEPKA39Eiq9hcU9zhLVAHf40fktz42tOW9Sp7QaqqhvWqrq+hc1KUpXqJSlRhx44+Y/wDw5+/X57YHwsRkfO8v6ACtsUT53iOMWSo888eGjMspoBdtxqiuSOGd9cZTzuRW0TEp8/BWl3X/orIGTFvFtQspblRX0JWAoBSVpPUHX8q83pP4ts6Vc3WXcJYcszpKFoU8fEKD0Pp29a2o9kTj9j/FTCWrdbpgLkDbUZl46d8AfIhQP7yE6SfMAH69IHjPguLwhGJe221RrWtePqo2E8WgncISC0naxV/novpxUxD8szBy42J15d0EN6Q41c0k2mCw6gMvyFfAechLaf2AVonSuXuTjPD/Nr7g+WXF+Gy/fLE1IXAuc52alb051AQtMgJ0EpWpDnwJSo86E8vzJTvaJTSHm1JWkLSoaKVDYP3qAeJ3CGFaJEOb7nYrfw8tTy7rOjeB4a0nwHW3EpSByrK+ZBSokFBQNb30ozmugf5sZqvl+FYmPDhlcp5xvJ7Zldrbn2qY3MjL6cyD1Sod0qHdKh2IOiK7UaNawcJ7lDyKzxZAvyMNz5Tyo6ICzyvPtJHNHTJZWf9oUWeRRcGid9CNGpNb4qXzF+ZnLMeWttH/adiBkNKA+qmj+0R9hzD1q0YXxFsrQZBXUbfj4qM+EtNBSnoU0KxfG+J2L5YeS132FJfHeP4oS6n7oVpQ/lWTJXsdwa67JGPFtNrQQRoQquUeVNCqebQ6kVSp0Ab2Bqs7XiOupZbWpSghCRtSlHQA861EzvinhGT33IVXjPJ+G3WU4wLXJhsOq5YrXP4ZXyoKSh1S1ucqiNpKN1LWe5a/ndsvEayNvScZt7LjlymxdlU8oBJiRyO/MRpaxvodDqSRr7h8m9cRuN9rt90Fltt4t58P3qyM78NltCFvQpDKyedsJUWgsgaWDreqpXi2MM724eLa9+fbbZdLDsDAXuUweydgzMbE38yuFthoyG9vOrNwYaU2uRH5/hWpJOklZBXpAAIKTUg8ayBw1u7egVPFlhsH6rW8hKf6kVmkdluKyltpCWmkJCUoQNAAdgB9BWvvtV5bOkYdfYVkT4v5BG/M57yeyXNEMM/5iT4h8g2P4qzw2F817MJHu4hvrx+qgYrE+RE/EkXlBNduC+3FP27uFXCW7rtNwvDk24MnlcZgtlzkPkSO1ZZwY9qvh7xy5mscvaFzUjZhvjkd1/lNeEVwnSLlOkSpTy35LyytxxxRKlKJJJJrIOGOaXTAM3tF6tEhyPLjyEKBbURzDm6pPoa+7O/T+F8vI0nNz/Cov77HM/wCUvB45a07Dj8bK/Q4FHr1FK6TC7su/YnaLi4nTsqK26oepSCaV8+cwscWngrjDM2WNsjdiAfVd/Xml+LjDuvvWISAFmzpC0q/hDnXW/wBN16W1HnGvgtj3HDDJWO5BHDrLg226B8TS/ooGun4ZimYTEiSTbb1XN8Uw0mIgHlauaQa51w78uq/P1W3X4a9ofybi/Ps61SW7e5DU8t6Msocjup+RxCh8qh1+/UHodVJF8/CUyBN7Wm1ZVGNrK+hkN7cCd+mq3K9lr2S8f9m+xPIhuGfeZQHvM5Y6n0HkKt/iPiGDdhXsDg7MCK781W4oZ8RIxrGObTgSSKqjfx2rS1mDc7NcMT4U+3jMbak6TOt3K1NSnr/eMqISsjp1QrZ/hroM8yTBOKWNSMbvl6lY+l1xtakSkrgPJUhQWBt1ISeoHmKmkI1vrXwlW+PNbLchlt9B7pcQFA/oa+Oy+FBwIY7Q8Dr9ivojZaNka9FG+BYVgGMLM6yKgzLi8P2l1fliVLe9S8olR+wOvSskvbEWQ2oh5o9P4xXMvhNhk5XM/i1oWruFe5Ng/wBBVg9wXwOO066rFrbypBUrUcHoPIVqZgJ4fcy0O69zsd71qJc8smPTkrFyNudA3oyFIJH2J7VFci9IsTpRj2VXGKU9AxbJ7riR9mwVD+lZRkvH3hvYJb0XHeG0OQ+glIlXKEiM3vffRSVkfoKxg8YLplO2X71FssBzp7hYIwjpI8isArP6EVMimMgsNYep0+ZIPooUsbWH3nDoP8VbjjvxVtFxRAgXW43KUogJjTre2pZ9SClKgPWpuxKHnnEe0sM55OjxIZ6u220AtKkD+F5YJ6eaUdD9Se1YPhc6zWlOoFsuMhSjtaolsfdUs+ZVy9fuTUuWLKLwWwLfhF6eUR0XN8KIj9edXMP+WocwB3ffRl19bUiDMNKIHN1WpFtttjWyA1FjMtxo7SQhDTaQlKQOwAHaur/IsbxaZcb8INttUqQNzLl4TbS3Bve3HNAnrrua6ZMXiJe1kLesuMxld/CSuc+B6E8iAf0VV3b+ENpMpE29ypmTzU9UuXZznaQfNLKQG0/fl361GZhZpfdZXfT5brcSBdldU9mF1zvcPCmi3CXtLuRymtMNj6+AhXV5Xkdcnqe1ZHA4cWa3YhKx4MqkRZiViW6+rndkrX87jij8yj51lLLKWWwhACUgaASNAVXr1ruYTCDCu8wG3c+XZR5csrDG4eyV5L8fPw0M3sWTzZuCst3qyyHC41HCuVxoE/L9hVx7N34beaXHL4F2zuOi0WiI6l4xioKW6QdgH06V6vclAjQ71dv5/E+XloXz/Cq/8I0nJ5pyctL7Xv8AXqrW3QmrdCYix0hDTCA2hI+gA0KVclodddKVWibNlWNoyNDWjQL6VQEkfzquleLNUch0aqSNCuaURKUpRErgjpXNKIviYraiSptCj5kVymO2jshI+wr60rDI3kipCNDVAnVVUrKkVPLquQNVzSvUSlKURKUpREpSlESlKURKUpREpSlESlKURKUpREpSlESlKURKUpREpSlESlKURf/Z" alt=""></div>
+    <div class="script rv" data-s="65.87" data-d="2.03" style="font-size:70px;line-height:1.15;margin-top:6px">KNRians<br>Get Together</div>
+    <div class="serif rv" data-s="67.61" data-d="2.03" style="font-size:30px;font-weight:700;color:var(--ruby)">Wed, 2nd Dec 2026 · 10 AM – 6 PM</div>
+    <div class="serif rv" data-s="69.06" data-d="1.45" style="font-size:28px;font-weight:600">Zabeel Park, Dubai</div>
+    <div class="ta rv" data-s="70.22" data-d="1.74" style="font-size:24px;font-weight:700;margin-top:24px;color:var(--ruby)">முன் பதிவு அவசியம் · Registration required</div>
+    <div id="qrwrap" style="margin-top:14px;opacity:0"><a id="qrbox" href="https://57ct2ps.s.gy/keo-meetup2026" target="_blank" rel="noopener" title="Open registration"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACiElEQVR4nO2bQYrcMBBFX0WGXrqhD5CjyDcLOVJuYB+lb2AtB2R+FpLsngmTzIDHaUNpIdz2W3woylX6rjbxmTV9+xQOzjvvvPPOO+/8e7zV1QEsBqkDkhmk9mw4UI/zO/NRkjSDDQQxfc8wXetPSdJr/qv1OL8zn2qGakwdxHkxonJ51hL7SD3O78N3f9zpM0Y/C9JNkI7V4/zX8jYks3Jl18X+ux7n9+F7SSOgkSDi3ayVY5Dam/p59Tv/V34yM7NrDSgQZANBwFLa52P1OL8TX+rvZlIKXkyQYboGoH9tYD6bfuc/wtuQurIx2UU2ABqp9dcGFs/fc/KUw22UpLHPaOylsqmdiTX2K/Js+p3/OB/vFxXXKt47bCh3g+zH3evvSXmaORUEfS5OFhAe2mlJuXCev2fl+4x0v0g/r0s5GpVww2LNqTxSj/P78C0vCWplNkOcm+sc5+2B5+/5ePSw5lA2WANa+6v64vb4no1f8xeIyo8Fd2w1uTTWXn/PyBd/w6KWTpMFWRRYHIOgn4F0UUXGI/Q4vy/f/Kt0awEFNF3rFfHXDUgX2TF6nN+Xb/k7ZiAZgqVTvHfZ4gzAYopy/+qkfKurfaZ1VRnq+Tes/bPX35PyzZ+c11gCW1TLimuH7fE9Gb9+P8plK/3V9jyOYKRruXo+/c7/Yz0Oz60mx/amjvOjcen5eza+zl+V5Ew3HpqsyaCZlMH753PzbX7Shm10o5eYzIzaSR+px/l9+Lfzk5qGxQRg0GXo51p/j9Hj/NfyNpSs7epUXZyB6bvPt5+c3+YnkxlRL2XcDlJXJnXKwelp9Tv/znrTP5fv+9v5t9gd3j+flTf/f7fzzjvvvPPOH87/BieuvaebTkHbAAAAAElFTkSuQmCC" alt="Registration QR code"></a></div>
+    <div class="serif rv" data-s="73.99" data-d="1.45" style="font-size:30px;font-weight:700;margin-top:10px;color:var(--ruby)">Register by 29 Nov 2026</div>
+    <div class="serif rv" data-s="75.44" data-d="1.45" style="font-size:24px;font-style:italic;margin-top:14px">Organised by KEO</div>
+    <div id="endBtns">
+      <a class="btn reg" href="https://57ct2ps.s.gy/keo-meetup2026" target="_blank" rel="noopener">Register Now ➜</a>
+      <a class="url" href="https://57ct2ps.s.gy/keo-meetup2026" target="_blank" rel="noopener">https://57ct2ps.s.gy/keo-meetup2026</a>
+      <div style="margin-top:14px"><button class="btn again" id="again" type="button">↺ Watch again</button></div>
+    </div>
+  </div>
+
+  <div id="night"></div>
+  <canvas id="fx" width="1440" height="2560"></canvas>
+  <div class="scene" id="sH">
+    <div class="hp" id="h1">Happy UAE</div>
+    <div class="nd" id="h2">National Day</div>
+    <div class="mf" id="h3"></div>
+    <div class="kg" id="h4">KNRians<br>Get Together</div>
+  </div>
+
+  <!-- ===== PETALS ===== -->
+  <svg class="full" id="petalSvg"></svg>
+
+  <!-- ===== ENVELOPE (gate fold) ===== -->
+  <div id="env" class="layer">
+    <svg class="full" id="envSvg">
+      <defs>
+        <filter id="sh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#3b2a1a" flood-opacity=".35"/></filter>
+      </defs>
+      <g id="panelL" filter="url(#sh)"><path id="pL" fill="url(#envpat)" stroke="#c9ad7a" stroke-width="3"/></g>
+      <g id="panelR" filter="url(#sh)"><path id="pR" fill="url(#envpat)" stroke="#c9ad7a" stroke-width="3"/></g>
+      <g id="ribbon" filter="url(#sh)">
+        <path d="M-10 590 C200 600 520 580 730 592 L730 650 C520 640 200 660 -10 648Z" fill="url(#silk)"/>
+        <path d="M-10 598 C200 606 520 588 730 600 M-10 642 C200 652 520 634 730 646" stroke="#1b1b1b" stroke-width="5" fill="none"/>
+        <path d="M340 620 C300 700 280 760 250 820 L280 812 L292 842 C318 770 340 700 356 630Z" fill="url(#silk)" stroke="#d3c2ab"/>
+        <path d="M380 620 C430 690 470 740 500 800 L470 796 L462 826 C430 760 400 700 366 630Z" fill="url(#silk)" stroke="#d3c2ab"/>
+      </g>
+      <g id="seal" transform="translate(360 620)">
+        <path d="M0 -78 C22 -80 40 -70 56 -58 C70 -46 80 -26 79 -4 C82 18 72 40 56 56 C40 72 18 82 -4 79 C-28 80 -48 70 -60 54 C-74 38 -80 16 -78 -6 C-80 -30 -68 -50 -52 -62 C-38 -74 -20 -78 0 -78Z" fill="url(#wax)"/>
+        <circle r="54" fill="none" stroke="#5a0814" stroke-width="3" opacity=".8"/>
+        <circle r="54" fill="none" stroke="#d5576a" stroke-width="1.2" opacity=".5" transform="translate(-1 -1.5)"/>
+        <text y="14" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700" font-size="40" fill="#4a0510" letter-spacing="2">KEO</text>
+        <text y="12.5" x="-1" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700" font-size="40" fill="#c0475a" opacity=".35" letter-spacing="2">KEO</text>
+        <ellipse cx="-24" cy="-40" rx="18" ry="7" fill="#fff" opacity=".18" transform="rotate(-30 -24 -40)"/>
+        <circle id="sealGlow" r="92" fill="#fff4c4" opacity="0"/>
+      </g>
+    </svg>
+    <button id="sealBtn" type="button" aria-label="Tap the KEO seal to open the invitation"></button>
+    <div id="hint">👆 Tap the KEO seal to open<small>திறக்க KEO முத்திரையைத் தொடவும்</small></div>
+  </div>
+</div>
+</div>
+<audio id="music" src="keo-music.m4a" preload="auto"></audio>
+
+<script>
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e}
+function use(id,x,y,w,h,rot,parent){return el('use',{href:'#'+id,x:x-w/2,y:y-h/2,width:w,height:h,transform:`rotate(${rot||0} ${x} ${y})`},parent)}
+// deterministic random
+let seed=7;function rnd(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646}
+
+// decorate a path with leaves, roses, buds
+function vine(parent,d,opt){
+  opt=Object.assign({leafGap:26,roseGap:150,rose:26,leaf:26,stroke:'#6b5a3a',width:2},opt||{});
+  const p=el('path',{d,fill:'none',stroke:opt.stroke,'stroke-width':opt.width},parent);
+  const L=p.getTotalLength();
+  let side=1;
+  for(let s=8;s<L;s+=opt.leafGap*(0.8+rnd()*0.5)){
+    const a=p.getPointAtLength(s),b=p.getPointAtLength(Math.min(L,s+1));
+    const ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI;
+    const g=el('g',{transform:`translate(${a.x} ${a.y}) rotate(${ang+side*(45+rnd()*25)})`},parent);
+    el('use',{href:'#leaf',x:0,y:-opt.leaf*0.25,width:opt.leaf,height:opt.leaf*0.5},g);
+    side=-side;
+  }
+  for(let s=opt.roseGap*0.5;s<L;s+=opt.roseGap*(0.75+rnd()*0.5)){
+    const a=p.getPointAtLength(s);
+    const r=opt.rose*(0.7+rnd()*0.6);
+    if(rnd()<0.3) use('bud',a.x,a.y,r*0.5,r*0.6,rnd()*360,parent);
+    else use('rose',a.x,a.y,r,r,rnd()*360,parent);
+  }
+}
+function cluster(parent,x,y,size,n){
+  for(let i=0;i<n+3;i++){const a=rnd()*Math.PI*2,r=size*(0.4+rnd()*0.7);
+    const g=el('g',{transform:`translate(${x+Math.cos(a)*r} ${y+Math.sin(a)*r*0.8}) rotate(${a*180/Math.PI})`},parent);
+    el('use',{href:'#leaf',x:0,y:-size*0.18,width:size*0.75,height:size*0.37},g);}
+  for(let i=0;i<n;i++){const a=rnd()*Math.PI*2,r=size*0.55*rnd();const s=size*(0.55+rnd()*0.45);
+    use('rose',x+Math.cos(a)*r,y+Math.sin(a)*r*0.8,s,s,rnd()*360,parent);}
+}
+
+// ---------- pillars ----------
+function pillar(parent,cx,top,h){
+  const g=el('g',{},parent), w=110;
+  el('rect',{x:cx-w/2-16,y:top+h-90,width:w+32,height:90,fill:'url(#stone)',stroke:'#a6a59c'},g);
+  el('rect',{x:cx-w/2-8,y:top+h-120,width:w+16,height:30,fill:'url(#stone)',stroke:'#a6a59c'},g);
+  el('rect',{x:cx-w/2-22,y:top+h-30,width:w+44,height:30,fill:'url(#stone)',stroke:'#a6a59c'},g);
+  el('rect',{x:cx-w/2,y:top+120,width:w,height:h-240,fill:'url(#stone)',stroke:'#a6a59c'},g);
+  for(let i=1;i<6;i++) el('line',{x1:cx-w/2+i*w/6,y1:top+130,x2:cx-w/2+i*w/6,y2:top+h-130,stroke:'#c9c9c1','stroke-width':2},g);
+  // capital
+  el('rect',{x:cx-w/2-26,y:top,width:w+52,height:26,fill:'url(#stone)',stroke:'#a6a59c'},g);
+  el('path',{d:`M${cx-w/2-14} ${top+26} Q${cx} ${top+60} ${cx+w/2+14} ${top+26} L${cx+w/2+4} ${top+120} H${cx-w/2-4}Z`,fill:'url(#stone)',stroke:'#a6a59c'},g);
+  for(const sx of [-1,1]){el('circle',{cx:cx+sx*(w/2+6),cy:top+44,r:16,fill:'#f7f7f4',stroke:'#a6a59c','stroke-width':2},g);
+    el('circle',{cx:cx+sx*(w/2+6),cy:top+44,r:7,fill:'none',stroke:'#a6a59c','stroke-width':2},g);}
+  for(let i=0;i<5;i++){const lx=cx-w/2+8+i*(w-16)/4;
+    el('path',{d:`M${lx} ${top+118} C${lx-14} ${top+90} ${lx-4} ${top+70} ${lx} ${top+62} C${lx+4} ${top+70} ${lx+14} ${top+90} ${lx} ${top+118}Z`,fill:'#ececE6',stroke:'#a6a59c'},g);}
+  // wrapping vine
+  let d=`M${cx-w/2} ${top+h-110}`;
+  for(let y=top+h-110,k=0;y>top+130;y-=110,k++){const x1=k%2?cx-w/2-10:cx+w/2+10;d+=` Q${x1} ${y-55} ${k%2?cx+w/2:cx-w/2} ${y-110}`}
+  vine(g,d,{leafGap:22,roseGap:120,rose:30,leaf:24});
+  cluster(g,cx,top+16,46,4);
+  cluster(g,cx,top+h-40,60,7);
+  return g;
+}
+const ps=document.getElementById('pillarSvg');
+pillar(ps,40,190,1130);
+pillar(ps,680,190,1130);
+// garland
+vine(ps,'M60 200 Q360 330 660 200',{leafGap:18,roseGap:70,rose:30,leaf:24});
+vine(ps,'M60 214 Q360 300 660 214',{leafGap:24,roseGap:200,rose:18,leaf:18,stroke:'#7d6a48',width:1.4});
+const doveL=el('g',{},ps), doveR=el('g',{},ps);
+el('use',{href:'#dove',x:-60,y:-50,width:120,height:80},doveL);
+el('use',{href:'#dove',x:-60,y:-50,width:120,height:80},doveR);
+
+// ---------- frame ----------
+const fs=document.getElementById('frameSvg');
+el('rect',{x:36,y:26,width:658,height:1228,rx:22,fill:'none',stroke:'#00732f','stroke-width':2.5},fs);
+el('rect',{x:48,y:38,width:634,height:1204,rx:16,fill:'none',stroke:'#1b1b1b','stroke-width':1.2},fs);
+vine(fs,'M40 70 C120 50 200 70 300 46 S520 70 680 52',{leafGap:22,roseGap:110,rose:24});
+vine(fs,'M40 1230 C140 1244 260 1222 380 1240 S580 1222 680 1236',{leafGap:22,roseGap:120,rose:24});
+vine(fs,'M50 60 C30 260 66 460 44 660 S60 1000 48 1230',{leafGap:24,roseGap:130,rose:24});
+vine(fs,'M670 60 C690 260 654 460 676 660 S660 1000 672 1230',{leafGap:24,roseGap:130,rose:24});
+cluster(fs,62,62,56,5);cluster(fs,658,62,56,5);cluster(fs,62,1218,56,5);cluster(fs,658,1218,56,5);
+
+// ---------- fountain ----------
+const fo=document.getElementById('fountainSvg');
+const fg=el('g',{transform:'translate(40 935) scale(1.25)'},fo);
+el('rect',{x:70,y:230,width:100,height:16,fill:'url(#stone)',stroke:'#a6a59c'},fg);
+el('rect',{x:92,y:205,width:56,height:26,fill:'url(#stone)',stroke:'#a6a59c'},fg);
+el('path',{d:'M8 150 C14 186 40 206 120 206 C200 206 226 186 232 150Z',fill:'url(#stone)',stroke:'#a6a59c'},fg);
+el('ellipse',{cx:120,cy:150,rx:115,ry:20,fill:'#f4f4f0',stroke:'#a6a59c'},fg);
+el('ellipse',{cx:120,cy:151,rx:104,ry:14,fill:'#a8c8d4'},fg);
+el('path',{d:'M108 150 C104 120 112 100 110 70 H130 C128 100 136 120 132 150Z',fill:'url(#stone)',stroke:'#a6a59c'},fg);
+el('path',{d:'M66 62 C72 84 92 92 120 92 C148 92 168 84 174 62Z',fill:'url(#stone)',stroke:'#a6a59c'},fg);
+el('ellipse',{cx:120,cy:62,rx:54,ry:10,fill:'#f4f4f0',stroke:'#a6a59c'},fg);
+el('ellipse',{cx:120,cy:63,rx:46,ry:6,fill:'#a8c8d4'},fg);
+el('path',{d:'M114 62 C112 46 116 36 114 24 H126 C124 36 128 46 126 62Z',fill:'url(#stone)',stroke:'#a6a59c'},fg);
+el('circle',{cx:120,cy:18,r:8,fill:'url(#stone)',stroke:'#a6a59c'},fg);
+const water=[];
+for(const [d] of [['M68 64 C56 80 50 110 46 146'],['M172 64 C184 80 190 110 194 146'],['M90 70 C82 90 78 116 76 146'],['M150 70 C158 90 162 116 164 146'],['M120 12 C108 0 92 14 84 40'],['M120 12 C132 0 148 14 156 40']])
+  water.push(el('path',{d,fill:'none',stroke:'#b9d8e3','stroke-width':2.4,'stroke-dasharray':'10 8',opacity:.9},fg));
+cluster(fo,60,1180,70,7);cluster(fo,300,1210,50,4);cluster(fo,40,1020,50,3);
+
+// ---------- petals ----------
+const pet=document.getElementById('petalSvg');const petals=[];
+for(let i=0;i<30;i++){
+  const leaf=rnd()<0.28;
+  const g=el('g',{},pet);
+  if(leaf) el('use',{href:'#leaf',x:-9,y:-4.5,width:18,height:9},g);
+  else el('path',{d:'M0 -9 C7 -8 9 2 3 8 C0 10 -3 10 -5 7 C-9 0 -6 -8 0 -9Z',fill:rnd()<.5?'#a3172e':'#c43a50',opacity:.9},g);
+  petals.push({g,x:rnd()*720,y:rnd()*1400,v:28+rnd()*36,amp:20+rnd()*40,f:.3+rnd()*.5,ph:rnd()*6.28,rot:rnd()*360,vr:-60+rnd()*120,s:.9+rnd()*1.1});
+}
+
+// ---------- envelope panels (scalloped inner edges) ----------
+function scallop(side){
+  const x0=side<0?0:720, xm=360;
+  let d=`M${x0} 0 L${xm} 0`;
+  const n=8,h=1280/n;
+  for(let i=0;i<n;i++){const y0=i*h,y1=(i+1)*h; const bulge=side<0?xm+30:xm-30; d+=` C${bulge} ${y0+h*0.1} ${bulge} ${y1-h*0.1} ${xm} ${y1}`;}
+  d+=` L${x0} 1280Z`;return d;
+}
+document.getElementById('pL').setAttribute('d',scallop(-1));
+document.getElementById('pR').setAttribute('d',scallop(1));
+
+// ---------- text reveal setup ----------
+const seg=new Intl.Segmenter(undefined,{granularity:'grapheme'});
+const reveals=[];
+function prep(node,list){
+  for(const c of [...node.childNodes]){
+    if(c.nodeType===3){const frag=document.createDocumentFragment();
+      for(const {segment} of seg.segment(c.textContent)){const s=document.createElement('span');s.className='g';s.textContent=segment;frag.appendChild(s);list.push(s)}
+      c.replaceWith(frag);}
+    else if(c.nodeName==='BR'){} else prep(c,list);
+  }
+}
+document.querySelectorAll('.rv').forEach(n=>{const list=[];prep(n,list);reveals.push({list,s:+n.dataset.s,d:+n.dataset.d})});
+const scenes=[...document.querySelectorAll('.scene')].map(n=>({n,i:+n.dataset.in,o:+n.dataset.out}));
+
+// ---------- timeline ----------
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const ease=t=>t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+const ramp=(t,a,b)=>ease(clamp((t-a)/(b-a)));
+const $=id=>document.getElementById(id);
+
+// ===== interactive timeline (web version) =====
+const M = o => 12.8 + (o - 7.6) * 1.45;          // old video time -> new, slower page time
+const stage = $('stage');
+function fit(){ const s = Math.min(innerWidth / 720, innerHeight / 1280); stage.style.transform = `scale(${s})`; }
+addEventListener('resize', fit); fit();
+
+// ---------- balloons, flags & fireworks ----------
+const cv = $('fx'), cx = cv.getContext('2d'); cx.scale(2, 2);
+const COLS = [['#ef3340', '#ff9aa0', '#8a0f1c'], ['#00a04a', '#8affbe', '#004d22'], ['#ffffff', '#ffffff', '#bdbdbd'], ['#232323', '#dcdcdc', '#000000']];
+let plan = [], balloons = [], flags = [], sparks = [], rings = [];
+const rr = (a, b) => a + Math.random() * (b - a);
+function makePlan(){
+  plan = [];
+  for (let i = 0; i < 64; i++) plan.push({type: 'b', t: 1.4 + rr(0, 5.4), x0: rr(50, 670), c: i % 4, popY: rr(140, 720), v: rr(230, 330), amp: rr(10, 30), f: rr(.8, 1.6), ph: rr(0, 6), r: rr(30, 44)});
+  for (let i = 0; i < 16; i++) plan.push({type: 'f', t: 1.6 + rr(0, 6.2), x0: rr(70, 600), v: rr(150, 215), w: rr(76, 108), ph: rr(0, 6), amp: rr(8, 22)});
+  plan.sort((a, b) => a.t - b.t);
+}
+function drawBalloon(b){
+  const {x, y, r} = b, col = COLS[b.c];
+  cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over';
+  cx.strokeStyle = 'rgba(255,255,255,.55)'; cx.lineWidth = 1.2; cx.beginPath();
+  cx.moveTo(x, y + r * 1.2); cx.quadraticCurveTo(x + 10 * Math.sin(b.ph + y / 50), y + r * 1.2 + 40, x - 4, y + r * 1.2 + 85); cx.stroke();
+  const g = cx.createRadialGradient(x - r * .35, y - r * .45, r * .08, x, y, r * 1.3);
+  g.addColorStop(0, col[1]); g.addColorStop(.38, col[0]); g.addColorStop(1, col[2]);
+  cx.fillStyle = g; cx.beginPath(); cx.ellipse(x, y, r, r * 1.18, 0, 0, Math.PI * 2); cx.fill();
+  if (b.c >= 2){ cx.strokeStyle = b.c === 3 ? 'rgba(255,255,255,.6)' : 'rgba(255,255,255,.9)'; cx.lineWidth = 1.5; cx.stroke(); }
+  cx.fillStyle = col[0]; cx.beginPath(); cx.moveTo(x - 5, y + r * 1.24); cx.lineTo(x + 5, y + r * 1.24); cx.lineTo(x, y + r * 1.13); cx.fill();
+  cx.fillStyle = 'rgba(255,255,255,.4)'; cx.beginPath(); cx.ellipse(x - r * .38, y - r * .5, r * .16, r * .3, -.5, 0, Math.PI * 2); cx.fill();
+}
+function drawFlag(f, T){
+  const w = f.w, hg = w * .5, x = f.x, y = f.y;
+  cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over';
+  cx.strokeStyle = '#e2c98f'; cx.lineWidth = 3; cx.beginPath(); cx.moveTo(x, y - 4); cx.lineTo(x, y + hg + w * .95); cx.stroke();
+  cx.fillStyle = '#ffd76a'; cx.beginPath(); cx.arc(x, y - 7, 4.5, 0, 6.283); cx.fill();
+  const N = 18, sw = w / N;
+  for (let i = 0; i < N; i++){
+    const u = i / N, off = Math.sin(T * 6 + f.ph - u * 5) * 7 * u, xx = x + i * sw, yy = y + off;
+    if (u < .26){ cx.fillStyle = '#ef3340'; cx.fillRect(xx, yy, sw + .7, hg); }
+    else { cx.fillStyle = '#00843d'; cx.fillRect(xx, yy, sw + .7, hg / 3 + .6);
+      cx.fillStyle = '#ffffff'; cx.fillRect(xx, yy + hg / 3, sw + .7, hg / 3 + .6);
+      cx.fillStyle = '#111111'; cx.fillRect(xx, yy + 2 * hg / 3, sw + .7, hg / 3); }
+  }
+}
+function pop(b){
+  const pal = b.c === 0 ? ['#ff3b4a', '#ff8a8f', '#ffd76a', '#ffffff'] : b.c === 1 ? ['#00e061', '#8affbe', '#ffd76a', '#ffffff']
+            : b.c === 2 ? ['#ffffff', '#fff3c4', '#ffd76a'] : ['#ffd76a', '#ffffff', '#c9c9c9'];
+  const n = 95;
+  for (let i = 0; i < n; i++){
+    const a = Math.random() * 6.283, sp = rr(60, 430) * (Math.random() < .3 ? .5 : 1);
+    sparks.push({x: b.x, y: b.y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 40, life: 0, max: rr(.9, 2.1), col: pal[i % pal.length], s: rr(1.3, 3.2), tw: Math.random() < .35});
+  }
+  for (let i = 0; i < 7; i++){
+    const a = rr(0, 6.28), sp = rr(80, 210);
+    sparks.push({x: b.x, y: b.y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 0, max: 1.3, col: COLS[b.c][0], s: 6, shred: true, rot: rr(0, 6), vr: rr(-8, 8)});
+  }
+  rings.push({x: b.x, y: b.y, life: 0});
+  popSound();
+}
+function stepFx(T, dt){
+  while (plan.length && plan[0].t <= T){
+    const p = plan.shift();
+    if (p.type === 'b') balloons.push(Object.assign({}, p, {x: p.x0, y: 1340 + rr(0, 60)}));
+    else flags.push(Object.assign({}, p, {x: p.x0, y: 1340 + rr(0, 60)}));
+  }
+  cx.clearRect(0, 0, 720, 1280);
+  for (const f of flags){ f.y -= f.v * dt; f.x = f.x0 + Math.sin(T * 1.1 + f.ph) * f.amp; drawFlag(f, T); }
+  flags = flags.filter(f => f.y > -220);
+  for (const b of balloons){ b.y -= b.v * dt; b.x = b.x0 + Math.sin(T * b.f + b.ph) * b.amp; if (b.y <= b.popY){ b.dead = true; pop(b); } else drawBalloon(b); }
+  balloons = balloons.filter(b => !b.dead);
+  cx.globalCompositeOperation = 'lighter';
+  for (const r of rings){ r.life += dt; const k = r.life / .4; cx.globalAlpha = Math.max(0, .8 * (1 - k));
+    cx.strokeStyle = '#fff6d0'; cx.lineWidth = 3; cx.beginPath(); cx.arc(r.x, r.y, 12 + 90 * k, 0, 6.283); cx.stroke(); }
+  rings = rings.filter(r => r.life < .4);
+  for (const s of sparks){
+    s.life += dt; const drag = Math.pow(.25, dt);
+    s.vx *= drag; s.vy = s.vy * drag + 170 * dt; s.x += s.vx * dt; s.y += s.vy * dt;
+    let a = Math.max(0, 1 - s.life / s.max); if (s.tw) a *= .45 + .55 * Math.abs(Math.sin(s.life * 38));
+    cx.globalAlpha = a;
+    if (s.shred){ cx.globalCompositeOperation = 'source-over'; s.rot += s.vr * dt;
+      cx.save(); cx.translate(s.x, s.y); cx.rotate(s.rot); cx.fillStyle = s.col; cx.fillRect(-6, -3, 12, 6); cx.restore();
+      cx.globalCompositeOperation = 'lighter'; }
+    else { cx.strokeStyle = s.col; cx.lineWidth = s.s; cx.lineCap = 'round'; cx.beginPath();
+      cx.moveTo(s.x - s.vx * .035, s.y - s.vy * .035); cx.lineTo(s.x, s.y); cx.stroke(); }
+  }
+  sparks = sparks.filter(s => s.life < s.max);
+  cx.globalAlpha = 1; cx.globalCompositeOperation = 'source-over';
+}
+
+// ---------- sound ----------
+let ac = null, noiseBuf = null, lastPop = 0;
+function initAudio(){
+  try{ if (!ac){ ac = new (window.AudioContext || window.webkitAudioContext)();
+      const n = ac.sampleRate * .6; noiseBuf = ac.createBuffer(1, n, ac.sampleRate);
+      const d = noiseBuf.getChannelData(0); for (let i = 0; i < n; i++) d[i] = Math.random() * 2 - 1; }
+    if (ac.state === 'suspended') ac.resume(); }catch(e){ ac = null; }
+}
+function popSound(){
+  if (!ac) return; const t = ac.currentTime; if (t - lastPop < .045) return; lastPop = t;
+  const s = ac.createBufferSource(); s.buffer = noiseBuf;
+  const bp = ac.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 700 + Math.random() * 900; bp.Q.value = .9;
+  const g = ac.createGain(); g.gain.setValueAtTime(.28, t); g.gain.exponentialRampToValueAtTime(.001, t + .14);
+  s.connect(bp).connect(g).connect(ac.destination); s.start(t, Math.random() * .4, .16);
+  for (let i = 0; i < 6; i++){
+    const c = ac.createBufferSource(); c.buffer = noiseBuf;
+    const hp = ac.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 3200;
+    const cg = ac.createGain(); const ct = t + .12 + Math.random() * .8;
+    cg.gain.setValueAtTime(.05 + .08 * Math.random(), ct); cg.gain.exponentialRampToValueAtTime(.001, ct + .03);
+    c.connect(hp).connect(cg).connect(ac.destination); c.start(ct, Math.random() * .5, .04);
+  }
+}
+
+// ---------- page timeline ----------
+let started = false, t0 = 0, last = 0, fxDone = false;
+window.renderAt = function(T, now){
+  now = now || 0;
+  // seal: idle pulse, blink on tap, then away
+  const blink = started && T < .8 ? Math.abs(Math.sin(T / .8 * Math.PI * 2)) : 0;
+  const idleGlow = started ? 0 : .12 + .12 * Math.sin(now * 3);
+  $('sealGlow').setAttribute('opacity', Math.max(blink * .85, idleGlow));
+  const sealOut = started ? ramp(T, .75, 1.5) : 0;
+  const pulse = started ? 1 + blink * .08 : 1 + .035 * Math.sin(now * 3);
+  $('seal').setAttribute('opacity', 1 - sealOut);
+  $('seal').setAttribute('transform', `translate(360 620) scale(${pulse * (1 + sealOut * .4)}) rotate(${sealOut * -14})`);
+  $('ribbon').setAttribute('opacity', 1 - (started ? ramp(T, .85, 1.6) : 0));
+  const open = started ? ramp(T, 1.1, 3.3) : 0;
+  $('panelL').setAttribute('transform', `translate(${-open * 420} 0)`);
+  $('panelR').setAttribute('transform', `translate(${open * 420} 0)`);
+  $('env').style.display = open >= 1 ? 'none' : 'block';
+  $('hint').style.opacity = started ? 1 - ramp(T, 0, .3) : .65 + .35 * Math.sin(now * 2.4);
+  // night sky for the celebration
+  $('night').style.opacity = ramp(T, 1.2, 2.4) * (1 - ramp(T, 11.6, 13.0));
+  // pillars & doves
+  const pil = 1 - ramp(T, M(23.6), M(25.2));
+  $('pillars').style.opacity = pil; $('pillars').style.display = pil <= 0 ? 'none' : 'block';
+  $('pillars').style.transform = `scale(${1.04 - .04 * ramp(T, 1.1, 5)})`;
+  const fly = ramp(T, 3.0, 7.5), bob = Math.sin(now * 1.6) * 4;
+  const flap = .55 + .45 * Math.cos(now * (fly < 1 ? 9 : 2.4));
+  doveL.setAttribute('transform', `translate(${-120 + 420 * fly} ${60 + 90 * fly + bob}) scale(-.95 .95)`);
+  doveR.setAttribute('transform', `translate(${840 - 420 * fly} ${60 + 90 * fly - bob}) scale(.95)`);
+  document.querySelectorAll('#pillarSvg .wing').forEach(w => w.setAttribute('transform', `scale(1 ${flap})`));
+  // frame + fountain
+  const fr = ramp(T, M(23.8), M(25.6));
+  $('frame').style.opacity = fr; $('frame').style.transform = `scale(${1.03 - .03 * fr})`;
+  $('fountain').style.opacity = ramp(T, M(24.2), M(26.0)) * (1 - ramp(T, M(42.6), M(43.6)));
+  water.forEach((w, i) => w.setAttribute('stroke-dashoffset', -now * 30 - i * 5));
+  // reading scenes
+  for (const s of scenes){ if (isNaN(s.i)) continue;
+    const v = ramp(T, s.i, s.i + .9) * (1 - ramp(T, s.o - .9, s.o));
+    s.n.style.opacity = v; s.n.style.display = v <= 0 ? 'none' : 'block';
+    s.n.style.transform = `translateY(${(1 - ramp(T, s.i, s.i + 1.4)) * 14}px)`; }
+  for (const r of reveals){ const n = r.list.length, per = r.d / Math.max(1, n);
+    if (T < r.s - 1 || T > r.s + r.d + 2) { const v = T > r.s ? '1' : '0'; if (r.state !== v){ r.list.forEach(sp => sp.style.opacity = v); r.state = v; } continue; }
+    r.state = null; r.list.forEach((sp, i) => { sp.style.opacity = clamp((T - r.s - i * per) / .55); }); }
+  // celebration greeting
+  const h = ramp(T, 3.6, 4.6) * (1 - ramp(T, 11.3, 12.5)), sH = $('sH');
+  sH.style.opacity = h; sH.style.display = h <= 0 ? 'none' : 'block';
+  const k1 = ramp(T, 3.8, 5.0), k2 = ramp(T, 4.6, 5.6), k3 = ramp(T, 5.3, 6.1), k4 = ramp(T, 6.0, 7.4);
+  $('h1').style.cssText = `opacity:${k1};transform:scale(${.6 + .4 * k1})`;
+  $('h2').style.cssText = `opacity:${k2};transform:translateY(${(1 - k2) * 20}px);letter-spacing:${6 + (1 - k2) * 14}px`;
+  $('h3').style.opacity = k3; $('h3').style.transform = `scale(${.4 + .6 * k3}) rotate(${(1 - k3) * -20}deg)`;
+  $('h4').style.cssText = `opacity:${k4};transform:translateY(${(1 - k4) * 30}px)`;
+  // details
+  const bz = ramp(T, M(8.2), M(10.4)); $('bism').style.opacity = bz; $('bism').style.filter = `blur(${(1 - bz) * 6}px)`;
+  const lg = document.querySelector('.rv0'); lg.style.opacity = ramp(T, M(43.6), M(44.6)); lg.style.transform = `scale(${.85 + .15 * ramp(T, M(43.6), M(44.8))})`;
+  const q = ramp(T, M(47.8), M(48.8)); $('qrwrap').style.opacity = q; $('qrwrap').style.transform = `scale(${.9 + .1 * q})`;
+  const e = ramp(T, M(50.8) + 1.6, M(50.8) + 2.8); const eb = $('endBtns');
+  eb.style.opacity = e; eb.style.transform = `translateY(${(1 - e) * 16}px)`; eb.classList.toggle('on', e > .5);
+  // petals
+  const pv = ramp(T, 2.5, 5);
+  for (const p of petals){ const y = ((p.y + p.v * now) % 1400) - 60, x = p.x + Math.sin(now * p.f + p.ph) * p.amp;
+    p.g.setAttribute('transform', `translate(${x} ${y}) rotate(${p.rot + p.vr * now}) scale(${p.s} ${p.s * (.6 + .4 * Math.abs(Math.sin(now * p.f * 2 + p.ph)))})`);
+    p.g.setAttribute('opacity', pv * .9); }
+};
+
+function start(offset){
+  started = true; t0 = performance.now() / 1000 - (offset || 0); fxDone = false;
+  makePlan(); balloons = []; flags = []; sparks = []; rings = []; cx.clearRect(0, 0, 720, 1280);
+  initAudio();
+  const m = $('music'); try{ m.pause(); m.currentTime = 0; m.volume = .85; const p = m.play(); if (p) p.catch(() => {}); }catch(e){}
+  $('sealBtn').style.display = 'none';
+}
+$('sealBtn').addEventListener('click', () => start());
+$('again').addEventListener('click', () => { window.scrollTo(0, 0); start(); });
+
+function frame(ts){
+  const now = ts / 1000, dt = Math.min(.05, now - (last || now)); last = now;
+  const T = started ? now - t0 : 0;
+  window.renderAt(T, now);
+  if (started && T < 14) stepFx(T, dt);
+  else if (started && !fxDone){ cx.clearRect(0, 0, 720, 1280); fxDone = true; }
+  requestAnimationFrame(frame);
+}
+document.fonts.ready.then(() => { window.READY = true; requestAnimationFrame(frame);
+  const q = new URLSearchParams(location.search); if (q.has('t')) start(parseFloat(q.get('t')) || 0); });
+
+</script>
+</body>
+</html>
